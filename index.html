@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+        padding: 10px;
+        margin: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        width: 80%;
+      }
+
+      button {
+        background-color: black;
+        width: 50%;
+        color: white;
+        padding: 10px;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+
+      span {
+        font-size: large;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Calculador tortas & invitados</h2>
+      <input id="input1" type="text" placeholder="Nº pedazos de torta" />
+      <input id="input2" type="text" placeholder="Nº de invitados" />
+
+      <button
+        onclick="
+      pedazos = document.querySelector('#input1').value;
+      invitados = document.querySelector('#input2').value;
+
+      cantidadDePedazosPorInvitado = pedazos / invitados;
+
+      if(cantidadDePedazosPorInvitado >= 1) {
+        span = document.querySelector('#mensaje')
+        span.innerHTML = 'Hay torta pa toititos'
+      }
+      
+      else {
+        span = document.querySelector('#mensaje')
+        span.innerHTML = 'No alcanza la tortigui'
+      }
+    
+      "
+      >
+        Verificar
+      </button>
+      <span id="mensaje"></span>
+    </div>
+  </body>
+</html>
